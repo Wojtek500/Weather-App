@@ -5,15 +5,15 @@ let dest = document.querySelector('.respond');
 let iconDest = document.querySelector('.icon');
 let rainDest = document.querySelector('.respond2')
 
-let resolve1 = function(fullfilled){
-    return fullfilled.json()
+let resolve1 = function(fulfilled){
+    return fulfilled.json()
 }
-let resolve2 = function(fullfilled){
-    console.log(fullfilled)
-    const temp = fullfilled.main.temp - 273.15
-    const wind = fullfilled.wind.speed
+let resolve2 = function(fulfilled){
+    console.log(fulfilled)
+    const temp = fulfilled.main.temp - 273.15
+    const wind = fulfilled.wind.speed
     console.log(wind)
-    const rain = fullfilled.weather['0'].main
+    const rain = fulfilled.weather['0'].main
     return dest.innerHTML = `<div class='up'>
         <div class='one'> ${Math.floor(temp)}°C</div>
         <div class='two'>wind: ${wind} m/s</div>
